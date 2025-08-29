@@ -8,7 +8,6 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
-import statsmodels.api as sm # ver o resumo do modelo
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, roc_auc_score
 from scipy.stats import spearmanr
@@ -287,4 +286,5 @@ with aba3:
     
 
     
+
 
