@@ -215,7 +215,7 @@ with aba2:
     # Interpretação
     # ==============================
     # Shap
-    shap.initjs()
+    
     sample_size = 50000  # ajustar conforme performance
     X_sample = X_train.sample(n=sample_size, random_state=42)
     # Objeto explainer - XGBoost:TreeExplainer, Floresta Aleatoria:Explainer, Regressão Logística: LinearExplainer
@@ -286,5 +286,6 @@ with aba3:
     
 
     
+
 
 
