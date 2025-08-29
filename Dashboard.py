@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from dfply import *
+#from dfply import *
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -112,8 +112,7 @@ with aba2:
     # Amostragem
 
     #Variável de interesse
-    alvo = df_select >> select(X.situacao_entrevistado)
-
+    alvo = df_select[['situacao_entrevistado']]
     # Remover a variável alvo do conjunto de dados
     df_select.drop(['situacao_entrevistado'],axis=1, inplace=True)
 
