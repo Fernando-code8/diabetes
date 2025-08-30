@@ -30,7 +30,18 @@ df["id"] = df.index # criando um id de
 df['situacao_entrevistado']=np.where(df["Diabetes_012"] == 0, "sem_diabetes", "pre_com_diabetes")
 df=df.drop(columns=["Diabetes_012"])
 
-aba1, aba2, aba3 = st.tabs(["Análise Exploratória", "Machine Learning (ML)", "Predição"])
+aba, aba1, aba2, aba3 = st.tabs(["Dicionário dos Dados","Análise Exploratória", "Machine Learning (ML)", "Predição"])
+
+with aba:
+    st.title("Dicionário dos Dados")
+    # ==============================
+    # Relatório
+    # ==============================
+
+    relatorio = pd.read_excel("Dicionário dos dados.xlsx",header=1)
+    st.subheader("Descrição das variáveis:")
+
+    st.write(relatorio)
 
 with aba1:
     st.title("Análise Exploratória (EDA)")
@@ -216,7 +227,7 @@ with aba2:
     # ==============================
     # Shap
     
-    sample_size = 50000  # ajustar conforme performance
+    sample_size = 5000  # ajustar conforme performance
     X_sample = X_train.sample(n=sample_size, random_state=42)
     # Objeto explainer - XGBoost:TreeExplainer, Floresta Aleatoria:Explainer, Regressão Logística: LinearExplainer
     explainer = shap.LinearExplainer(log_reg,X_train, feature_perturbation="interventional")
